@@ -7,7 +7,6 @@ import (
 	"strings"
 )
 
-// DataBase holds all structures by name.
 type DataBase struct {
 	Arrays     map[string][]string
 	SLists     map[string]*Node
@@ -30,21 +29,16 @@ func newDataBase() *DataBase {
 	}
 }
 
-// LoadFromFile reads the file and populates db
-// Format: type:name:data
 func LoadFromFile(filename string, db *DataBase) error {
-	// If db is nil, create a new one
 	if db == nil {
 		return errors.New("nil db")
 	}
-	// Ensure maps exist
 	if db.Arrays == nil {
 		*db = *newDataBase()
 	}
 
 	f, err := os.Open(filename)
 	if err != nil {
-		// return err to allow caller to decide; caller may treat missing file as empty DB
 		return err
 	}
 	defer f.Close()
@@ -86,13 +80,11 @@ func LoadFromFile(filename string, db *DataBase) error {
 			TreeDeserialize(t, data)
 			db.Trees[name] = t
 		default:
-			// ignore unknown
 		}
 	}
 	return sc.Err()
 }
 
-// SaveToFile writes DB to file in the same format
 func SaveToFile(filename string, db *DataBase) error {
 	if db == nil {
 		return errors.New("nil db")
@@ -128,7 +120,6 @@ func SaveToFile(filename string, db *DataBase) error {
 }
 
 func serializeCSV(items []string) string {
-	// Note: assumes items do not contain commas.
 	return strings.Join(items, ",")
 }
 
@@ -137,7 +128,6 @@ func deserializeCSV(s string) []string {
 		return []string{}
 	}
 	parts := strings.Split(s, ",")
-	// filter possible empty tokens? Keep as is (original did skip empty)
 	out := make([]string, 0, len(parts))
 	for _, p := range parts {
 		if p == "" {

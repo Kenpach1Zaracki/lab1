@@ -5,7 +5,6 @@ import (
 	"strings"
 )
 
-// simple stack of strings using slice
 
 func StackPush(s *[]string, val string) {
 	*s = append(*s, val)

@@ -5,7 +5,6 @@ import (
 	"strings"
 )
 
-// queue using slice as deque (pop front by re-slicing)
 func QueuePush(q *[]string, val string) {
 	*q = append(*q, val)
 }

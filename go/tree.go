@@ -6,7 +6,6 @@ import (
 	"strings"
 )
 
-// Complete binary tree (insert by levels)
 type TNode struct {
 	Value int
 	Left  *TNode
@@ -27,7 +26,6 @@ func treeClearNode(node *TNode) {
 	}
 	treeClearNode(node.Left)
 	treeClearNode(node.Right)
-	// GC handles freeing
 }
 
 func TreeClear(t *FullBinaryTree) {
@@ -41,7 +39,6 @@ func TreeInsert(t *FullBinaryTree, value int) {
 		t.Root = n
 		return
 	}
-	// BFS to find first empty spot
 	queue := []*TNode{t.Root}
 	for len(queue) > 0 {
 		cur := queue[0]
@@ -82,7 +79,6 @@ func TreeFind(t *FullBinaryTree, value int) bool {
 	return false
 }
 
-// isFull: every node has 0 or 2 children
 func TreeIsFull(t *FullBinaryTree) bool {
 	if t.Root == nil {
 		return true
@@ -91,11 +87,9 @@ func TreeIsFull(t *FullBinaryTree) bool {
 	for len(queue) > 0 {
 		cur := queue[0]
 		queue = queue[1:]
-		// if left is nil and right is not - not full
 		if cur.Left == nil && cur.Right != nil {
 			return false
 		}
-		// if node has exactly one child -> not full
 		if (cur.Left == nil && cur.Right != nil) || (cur.Left != nil && cur.Right == nil) {
 			return false
 		}

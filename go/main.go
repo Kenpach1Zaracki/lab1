@@ -24,14 +24,11 @@ func main() {
 	var db DataBase
 	err := LoadFromFile(*file, &db)
 	if err != nil {
-		// If file doesn't exist or can't be read, start with empty DB (but print error)
-		// We'll still try to run command on empty DB.
-		// fmt.Println("Warning loading file:", err)
+		
 	}
 
 	changed, err := HandleCommand(*query, &db)
 	if err != nil {
-		// Print error but continue (many commands simply print themselves)
 		fmt.Println("ERROR:", err)
 	}
 

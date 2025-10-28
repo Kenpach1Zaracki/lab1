@@ -5,7 +5,6 @@ import (
 	"strings"
 )
 
-// DNode for doubly linked list (string values)
 type DNode struct {
 	Value string
 	Next  *DNode

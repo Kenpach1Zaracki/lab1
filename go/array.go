@@ -4,8 +4,6 @@ import (
 	"fmt"
 )
 
-// Array helpers (arrays of strings)
-
 func ArrayPushBack(arr *[]string, val string) {
 	*arr = append(*arr, val)
 }

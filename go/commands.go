@@ -6,20 +6,17 @@ import (
 	"strings"
 )
 
-// HandleCommand executes a single query against db.
-// Returns changed=true if DB modified (so caller can save).
 func HandleCommand(query string, db *DataBase) (bool, error) {
 	if db == nil {
 		// initialize if nil
 		ndb := newDataBase()
 		db = ndb
 	}
-	// ensure maps exist
+
 	if db.Arrays == nil {
 		*db = *newDataBase()
 	}
 
-	// tokenize by space (no support for quoted strings)
 	tokens := splitTokens(query)
 	if len(tokens) == 0 {
 		return false, nil
@@ -27,9 +24,7 @@ func HandleCommand(query string, db *DataBase) (bool, error) {
 	cmd := strings.ToUpper(tokens[0])
 
 	switch cmd {
-	// ARRAY
 	case "MPUSH":
-		// MPUSH name value
 		if len(tokens) < 3 {
 			fmt.Println("BAD ARGS")
 			return false, nil
@@ -41,7 +36,6 @@ func HandleCommand(query string, db *DataBase) (bool, error) {
 		return true, nil
 
 	case "MPUSHAT", "FPUSH":
-		// MPUSHAT name idx value
 		if len(tokens) < 4 {
 			fmt.Println("BAD ARGS")
 			return false, nil
@@ -60,7 +54,6 @@ func HandleCommand(query string, db *DataBase) (bool, error) {
 		if idx >= len(arr) {
 			arr = append(arr, value)
 		} else {
-			// insert
 			arr = append(arr[:idx+1], arr[idx:]...)
 			arr[idx] = value
 		}
@@ -69,7 +62,6 @@ func HandleCommand(query string, db *DataBase) (bool, error) {
 		return true, nil
 
 	case "MDEL":
-		// MDEL name idx
 		if len(tokens) < 3 {
 			fmt.Println("BAD ARGS")
 			return false, nil
@@ -89,7 +81,6 @@ func HandleCommand(query string, db *DataBase) (bool, error) {
 		return true, nil
 
 	case "MGET":
-		// MGET name idx
 		if len(tokens) < 3 {
 			fmt.Println("BAD ARGS")
 			return false, nil
@@ -112,7 +103,6 @@ func HandleCommand(query string, db *DataBase) (bool, error) {
 		fmt.Println(arr[idx])
 		return false, nil
 
-	// SLIST (F*)
 	case "FADD_HEAD":
 		if len(tokens) < 3 {
 			fmt.Println("BAD ARGS")
@@ -201,7 +191,6 @@ func HandleCommand(query string, db *DataBase) (bool, error) {
 		}
 		return false, nil
 
-	// DLIST (L*)
 	case "LADD_HEAD":
 		if len(tokens) < 3 {
 			fmt.Println("BAD ARGS")
@@ -294,7 +283,6 @@ func HandleCommand(query string, db *DataBase) (bool, error) {
 		}
 		return false, nil
 
-	// STACK
 	case "SPUSH":
 		if len(tokens) < 3 {
 			fmt.Println("BAD ARGS")
@@ -324,7 +312,6 @@ func HandleCommand(query string, db *DataBase) (bool, error) {
 		}
 		return true, nil
 
-	// QUEUE
 	case "QPUSH":
 		if len(tokens) < 3 {
 			fmt.Println("BAD ARGS")
@@ -354,7 +341,6 @@ func HandleCommand(query string, db *DataBase) (bool, error) {
 		}
 		return true, nil
 
-	// TREE
 	case "TINSERT":
 		if len(tokens) < 3 {
 			fmt.Println("BAD ARGS")
@@ -417,7 +403,6 @@ func HandleCommand(query string, db *DataBase) (bool, error) {
 		}
 		return false, nil
 
-	// PRINT
 	case "PRINT":
 		if len(tokens) < 2 {
 			fmt.Println("BAD ARGS")
@@ -453,7 +438,6 @@ func HandleCommand(query string, db *DataBase) (bool, error) {
 	}
 }
 
-// splitTokens splits by whitespace. Values with spaces are not supported.
 func splitTokens(s string) []string {
 	fields := strings.Fields(s)
 	return fields
