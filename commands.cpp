@@ -5,13 +5,10 @@
 #include "dlist.h"
 #include "stack.h"
 #include "queue.h"
-#include "avl_tree.h"
+#include "full_binary_tree.h"
 #include <sstream>
 #include <iostream>
 #include <stdexcept>
-
-extern Entry entries[100];
-extern int entryCount;
 
 // Обработка всех команд
 void process_command(const std::string& command) {
@@ -28,7 +25,7 @@ void process_command(const std::string& command) {
             Entry* e = find_entry(name);
             if (!e) {
                 Array* a = create_array(name);
-                array_insert(a, index, val);  // Используем вставку по индексу
+                array_insert(a, index, val);
                 entries[entryCount++] = {"ARRAY", a, name};
             } else {
                 array_insert((Array*)e->ptr, index, val);
@@ -309,7 +306,7 @@ void process_command(const std::string& command) {
             std::string name;
             ss >> name;
             Entry* e = find_entry(name);
-            if (e && tree_is_full(((Tree*)e->ptr)->root)) {
+            if (e && tree_is_full((Tree*)e->ptr)) {
                 std::cout << "TRUE" << std::endl;
             } else {
                 std::cout << "FALSE" << std::endl;

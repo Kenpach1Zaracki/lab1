@@ -12,8 +12,10 @@ Doubly_List* create_doubly_list(const std::string& name) {
 // Добавление в начало
 void dlist_push_head(Doubly_List* list, const std::string& value) {
     DListNode* newNode = new DListNode{value, nullptr, list->head};
-    if (list->head) list->head->prev = newNode;
-    else list->tail = newNode;
+    if (list->head) 
+        list->head->prev = newNode;
+    else 
+        list->tail = newNode;
     list->head = newNode;
 }
 // Добавление в конец
