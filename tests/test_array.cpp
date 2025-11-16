@@ -52,3 +52,20 @@ TEST_F(ArrayTest, Read) {
     array_push_back(arr, "world");
     EXPECT_EQ(array_read(arr), "hello world");
 }
+// ДОБАВЬ! EDGE/ERROR TESTЫ
+
+TEST_F(ArrayTest, DestroyNull) {
+    EXPECT_NO_THROW(destroy_array(nullptr));
+}
+
+TEST_F(ArrayTest, GetSetNullArray) {
+    EXPECT_THROW(array_get(nullptr, 0), std::out_of_range);
+    EXPECT_THROW(array_set(nullptr, 0, "fail"), std::out_of_range);
+}
+
+TEST_F(ArrayTest, InsertDeleteOutOfBounds) {
+    Array* arr2 = create_array("extra");
+    EXPECT_THROW(array_insert(arr2, 100, "bad"), std::out_of_range);
+    EXPECT_THROW(array_delete(arr2, 100), std::out_of_range);
+    destroy_array(arr2);
+}
