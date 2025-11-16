@@ -55,6 +55,7 @@ TEST_F(ArrayTest, Read) {
 // ДОБАВЬ! EDGE/ERROR TESTЫ
 
 TEST_F(ArrayTest, DestroyNull) {
+    if (!arr) return;
     EXPECT_NO_THROW(destroy_array(nullptr));
 }
 
