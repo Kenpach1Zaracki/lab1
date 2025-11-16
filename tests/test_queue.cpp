@@ -17,14 +17,14 @@ TEST_F(QueueTest, PushPop) {
     queue_push(queue, "b");
     EXPECT_EQ(queue_pop(queue), "a");
     EXPECT_EQ(queue_pop(queue), "b");
-    EXPECT_EQ(queue_pop(queue), "");
+    EXPECT_THROW(queue_pop(queue), std::runtime_error);
 }
 
 TEST_F(QueueTest, IsEmptyManual) {
-    EXPECT_EQ(queue_pop(queue), "");
+    EXPECT_THROW(queue_pop(queue), std::runtime_error);
     queue_push(queue, "x");
     EXPECT_EQ(queue_pop(queue), "x");
-    EXPECT_EQ(queue_pop(queue), "");
+    EXPECT_THROW(queue_pop(queue), std::runtime_error);
 }
 
 TEST_F(QueueTest, Read) {
@@ -38,6 +38,11 @@ TEST_F(QueueTest, BenchmarkPushPop) {
         queue_push(queue, std::to_string(i));
     }
     int count = 0;
-    while (queue_pop(queue) != "") count++;
+    try {
+        while (true) {
+            queue_pop(queue);
+            count++;
+        }
+    } catch (const std::runtime_error&) {}
     EXPECT_EQ(count, 1000);
 }
