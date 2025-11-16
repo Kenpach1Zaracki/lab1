@@ -20,8 +20,8 @@ TEST_F(StackTest, PushPopPeek) {
     EXPECT_EQ(stack_pop(stack), "b");
     EXPECT_EQ(stack_peek(stack), "a");
     EXPECT_EQ(stack_pop(stack), "a");
-    EXPECT_EQ(stack_peek(stack), "");
-    EXPECT_EQ(stack_pop(stack), "");
+    EXPECT_THROW(stack_peek(stack), std::runtime_error);
+    EXPECT_THROW(stack_pop(stack), std::runtime_error);
     EXPECT_EQ(stack->top, nullptr);
 }
 
@@ -40,8 +40,8 @@ TEST_F(StackTest, Read) {
 }
 
 TEST_F(StackTest, PopEmpty) {
-    EXPECT_EQ(stack_pop(stack), "");
-    EXPECT_EQ(stack_peek(stack), "");
+    EXPECT_THROW(stack_pop(stack), std::runtime_error);
+    EXPECT_THROW(stack_peek(stack), std::runtime_error);
 }
 
 TEST_F(StackTest, BenchmarkPushPop) {
@@ -49,9 +49,11 @@ TEST_F(StackTest, BenchmarkPushPop) {
         stack_push(stack, std::to_string(i));
     }
     int count = 0;
-    while (stack->top != nullptr) {
-        stack_pop(stack);
-        count++;
-    }
+    try {
+        while (true) {
+            stack_pop(stack);
+            count++;
+        }
+    } catch (const std::runtime_error&) {}
     EXPECT_EQ(count, 1000);
 }
