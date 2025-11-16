@@ -82,20 +82,22 @@ TEST_F(ForwardListTest, BenchmarkInsertFind) {
 }
 // ДОБАВЬ! EDGE/ERROR TESTЫ
 
+// EDGE/ERROR TESTЫ для Forward_List
+
 TEST(SlistExtraTest, DestroyNull) {
-    EXPECT_NO_THROW(slist_destroy(nullptr));
+    EXPECT_NO_THROW(destroy_forward_list(nullptr));
 }
 
 TEST(SlistExtraTest, PushNull) {
-    EXPECT_THROW(slist_push_head(nullptr, "item"), std::invalid_argument);
-    EXPECT_THROW(slist_push_tail(nullptr, "item"), std::invalid_argument);
+    EXPECT_THROW(flist_push_head(nullptr, "item"), std::invalid_argument);
+    EXPECT_THROW(flist_push_tail(nullptr, "item"), std::invalid_argument);
 }
 
 TEST(SlistExtraTest, DeleteFindPopEmpty) {
-    SList* list = slist_create("extra");
-    EXPECT_THROW(slist_delete_value(list, "notfound"), std::runtime_error);
-    EXPECT_THROW(slist_pop_head(list), std::runtime_error);
-    EXPECT_THROW(slist_pop_tail(list), std::runtime_error);
-    EXPECT_FALSE(slist_find(list, "notfound"));
-    slist_destroy(list);
+    Forward_List* list = create_forward_list("extra");
+    EXPECT_THROW(flist_delete_value(list, "notfound"), std::runtime_error);
+    EXPECT_THROW(flist_delete_head(list), std::runtime_error); // если на пустом выбрасывается
+    EXPECT_THROW(flist_delete_tail(list), std::runtime_error);
+    EXPECT_FALSE(flist_find(list, "notfound"));
+    destroy_forward_list(list);
 }
