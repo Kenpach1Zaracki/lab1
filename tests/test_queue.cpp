@@ -12,53 +12,32 @@ protected:
     }
 };
 
-TEST_F(QueueTest, PushPopFront) {
+TEST_F(QueueTest, PushPop) {
     queue_push(queue, "a");
     queue_push(queue, "b");
-    EXPECT_EQ(queue_front(queue), "a");
-    EXPECT_FALSE(queue_is_empty(queue));
-    queue_pop(queue);
-    EXPECT_EQ(queue_front(queue), "b");
-    queue_pop(queue);
-    EXPECT_TRUE(queue_is_empty(queue));
+    EXPECT_EQ(queue_pop(queue), "a");
+    EXPECT_EQ(queue_pop(queue), "b");
+    EXPECT_EQ(queue_pop(queue), "");
 }
 
-TEST_F(QueueTest, IsEmptySize) {
-    EXPECT_TRUE(queue_is_empty(queue));
-    EXPECT_EQ(queue_size(queue), 0);
+TEST_F(QueueTest, IsEmptyManual) {
+    EXPECT_EQ(queue_pop(queue), "");
     queue_push(queue, "x");
-    EXPECT_EQ(queue_size(queue), 1);
-}
-
-TEST_F(QueueTest, Find) {
-    queue_push(queue, "m");
-    queue_push(queue, "n");
-    EXPECT_TRUE(queue_find(queue, "m"));
-    EXPECT_FALSE(queue_find(queue, "notfound"));
+    EXPECT_EQ(queue_pop(queue), "x");
+    EXPECT_EQ(queue_pop(queue), "");
 }
 
 TEST_F(QueueTest, Read) {
-    queue_push(queue, "r");
-    queue_push(queue, "z");
-    EXPECT_EQ(queue_read(queue), "r z");
-}
-
-TEST_F(QueueTest, PopEmpty) {
-    queue_pop(queue); // безопасно
-    EXPECT_TRUE(queue_is_empty(queue));
+    queue_push(queue, "m");
+    queue_push(queue, "n");
+    EXPECT_EQ(queue_read(queue), "m n");
 }
 
 TEST_F(QueueTest, BenchmarkPushPop) {
-    auto start = std::chrono::high_resolution_clock::now();
     for (int i = 0; i < 1000; ++i) {
         queue_push(queue, std::to_string(i));
     }
-    auto mid = std::chrono::high_resolution_clock::now();
-    for (int i = 0; i < 1000; ++i) {
-        queue_pop(queue);
-    }
-    auto end = std::chrono::high_resolution_clock::now();
-    auto dur_push = std::chrono::duration_cast<std::chrono::microseconds>(mid - start);
-    auto dur_pop = std::chrono::duration_cast<std::chrono::microseconds>(end - mid);
-    std::cout << "Push 1000: " << dur_push.count() << " us, Pop 1000: " << dur_pop.count() << " us\n";
+    int count = 0;
+    while (queue_pop(queue) != "") count++;
+    EXPECT_EQ(count, 1000);
 }
