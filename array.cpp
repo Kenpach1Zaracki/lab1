@@ -11,7 +11,6 @@ Array* create_array(const std::string& name) {
     return arr;
 }
 
-// Добавление в конец с авторасширением
 void array_push_back(Array* arr, const std::string& value) {
     if (!arr) throw std::invalid_argument("Null array pointer");
     if (arr->size >= arr->capacity) {
@@ -25,7 +24,6 @@ void array_push_back(Array* arr, const std::string& value) {
     arr->data[arr->size++] = value;
 }
 
-// Вставка по индексу
 void array_insert(Array* arr, int index, const std::string& value) {
     if (!arr) throw std::invalid_argument("Null array pointer");
     if (index < 0 || index > arr->size) throw std::out_of_range("Index out of range");
@@ -46,21 +44,18 @@ void array_insert(Array* arr, int index, const std::string& value) {
     arr->size++;
 }
 
-// Получение элемента по индексу
 std::string array_get(const Array* arr, int index) {
-    if (!arr) throw std::out_of_range("Null array pointer");
+    if (!arr) throw std::invalid_argument("Null array pointer");
     if (index < 0 || index >= arr->size) throw std::out_of_range("Index out of range");
     return arr->data[index];
 }
 
-// Изменение элемента по индексу
 void array_set(Array* arr, int index, const std::string& value) {
-    if (!arr) throw std::out_of_range("Null array pointer");
+    if (!arr) throw std::invalid_argument("Null array pointer");
     if (index < 0 || index >= arr->size) throw std::out_of_range("Index out of range");
     arr->data[index] = value;
 }
 
-// Удаление элемента по индексу
 void array_delete(Array* arr, int index) {
     if (!arr) throw std::invalid_argument("Null array pointer");
     if (index < 0 || index >= arr->size) throw std::out_of_range("Index out of range");
@@ -68,13 +63,11 @@ void array_delete(Array* arr, int index) {
     arr->size--;
 }
 
-// Получение количества элементов
 int array_length(const Array* arr) {
     if (!arr) return 0;
     return arr->size;
 }
 
-// Чтение всех элементов в строку
 std::string array_read(const Array* arr) {
     if (!arr) return "";
     std::string result;
@@ -85,7 +78,6 @@ std::string array_read(const Array* arr) {
     return result;
 }
 
-// Удаление массива
 void destroy_array(Array* arr) {
     if (!arr) return;
     delete[] arr->data;
