@@ -11,10 +11,9 @@ cpp-test: cpp-build
 	cd build && ./run_tests
 
 cpp-coverage: cpp-test
-	cd build && lcov --capture --directory . --output-file coverage.info
-	cd build && lcov --remove coverage.info '/usr/*' --output-file coverage.info
+	cd build && lcov --capture --directory . --output-file coverage.info --ignore-errors inconsistent
+	cd build && lcov --remove coverage.info '/usr/*' '_deps/*' --output-file coverage.info --ignore-errors inconsistent
 	cd build && genhtml coverage.info --output-directory coverage_html
-	@echo "Coverage report generated in build/coverage_html/index.html"
 
 # Go тесты
 go-test:

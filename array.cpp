@@ -26,11 +26,31 @@ void array_push_back(Array* arr, const std::string& value) {
 // Вставка по индексу
 void array_insert(Array* arr, int index, const std::string& value) {
     if (index < 0 || index > arr->size) throw std::out_of_range("Index out of range");
-    array_push_back(arr, ""); // Увеличиваем размер
-    for (int i = arr->size - 1; i > index; --i) {
+    
+    // Если вставляем в конец, используем push_back
+    if (index == arr->size) {
+        array_push_back(arr, value);
+        return;
+    }
+    
+    // Проверяем нужно ли расширять массив
+    if (arr->size >= arr->capacity) {
+        int new_capacity = arr->capacity * 2;
+        std::string* new_data = new std::string[new_capacity];
+        for (int i = 0; i < arr->size; ++i) {
+            new_data[i] = arr->data[i];
+        }
+        delete[] arr->data;
+        arr->data = new_data;
+        arr->capacity = new_capacity;
+    }
+    
+    // Сдвигаем элементы
+    for (int i = arr->size; i > index; --i) {
         arr->data[i] = arr->data[i - 1];
     }
     arr->data[index] = value;
+    arr->size++;
 }
 // Получение элемента по индексу
 std::string array_get(const Array* arr, int index) {
@@ -65,6 +85,7 @@ std::string array_read(const Array* arr) {
 }
 
 void destroy_array(Array* arr) {
+    if (!arr) return; 
     delete[] arr->data;
     delete arr;
 }
