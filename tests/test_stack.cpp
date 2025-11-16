@@ -57,3 +57,17 @@ TEST_F(StackTest, BenchmarkPushPop) {
     } catch (const std::runtime_error&) {}
     EXPECT_EQ(count, 1000);
 }
+// ДОБАВЬ! EDGE/ERROR TESTЫ
+
+TEST(StackExtraTest, DestroyNull) {
+    EXPECT_NO_THROW(destroy_stack(nullptr));
+}
+
+TEST(StackExtraTest, PushNull) {
+    EXPECT_THROW(stack_push(nullptr, "push"), std::invalid_argument);
+}
+
+TEST(StackExtraTest, PopPeekNull) {
+    EXPECT_THROW(stack_pop(nullptr), std::runtime_error);
+    EXPECT_THROW(stack_peek(nullptr), std::runtime_error);
+}
