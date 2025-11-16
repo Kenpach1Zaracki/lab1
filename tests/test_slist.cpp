@@ -80,3 +80,22 @@ TEST_F(ForwardListTest, BenchmarkInsertFind) {
     auto dur_find = std::chrono::duration_cast<std::chrono::microseconds>(end - mid);
     std::cout << "Insert 1000: " << dur_insert.count() << " us, Find 1000: " << dur_find.count() << " us\n";
 }
+// ДОБАВЬ! EDGE/ERROR TESTЫ
+
+TEST(SlistExtraTest, DestroyNull) {
+    EXPECT_NO_THROW(slist_destroy(nullptr));
+}
+
+TEST(SlistExtraTest, PushNull) {
+    EXPECT_THROW(slist_push_head(nullptr, "item"), std::invalid_argument);
+    EXPECT_THROW(slist_push_tail(nullptr, "item"), std::invalid_argument);
+}
+
+TEST(SlistExtraTest, DeleteFindPopEmpty) {
+    SList* list = slist_create("extra");
+    EXPECT_THROW(slist_delete_value(list, "notfound"), std::runtime_error);
+    EXPECT_THROW(slist_pop_head(list), std::runtime_error);
+    EXPECT_THROW(slist_pop_tail(list), std::runtime_error);
+    EXPECT_FALSE(slist_find(list, "notfound"));
+    slist_destroy(list);
+}
