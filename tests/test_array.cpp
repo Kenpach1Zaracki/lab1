@@ -43,9 +43,8 @@ TEST_F(ArrayTest, Delete) {
 }
 
 TEST_F(ArrayTest, OutOfBounds) {
-    EXPECT_EQ(array_get(arr, 5), "");
-    array_set(arr, 3, "z");    // не вызывает ошибку
-    EXPECT_EQ(array_get(arr, 3), "");
+    EXPECT_THROW(array_get(arr, 5), std::out_of_range);
+    EXPECT_THROW(array_set(arr, 3, "z"), std::out_of_range);
 }
 
 TEST_F(ArrayTest, Read) {
