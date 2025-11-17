@@ -9,7 +9,15 @@ run_tests: \
   CMakeFiles/run_tests.dir/stack.cpp.o \
   CMakeFiles/run_tests.dir/storage.cpp.o \
   CMakeFiles/run_tests.dir/full_binary_tree.cpp.o \
+  CMakeFiles/run_tests.dir/hash_simple.cpp.o \
   CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.o \
+  CMakeFiles/run_tests.dir/tests/test_array.cpp.o \
+  CMakeFiles/run_tests.dir/tests/test_slist.cpp.o \
+  CMakeFiles/run_tests.dir/tests/test_dlist.cpp.o \
+  CMakeFiles/run_tests.dir/tests/test_stack.cpp.o \
+  CMakeFiles/run_tests.dir/tests/test_queue.cpp.o \
+  CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.o \
+  CMakeFiles/run_tests.dir/tests/test_storage.cpp.o \
   lib/libgtest_main.a \
   lib/libgtest.a \
   /usr/lib/gcc/x86_64-linux-gnu/14/libstdc++.so \
@@ -61,7 +69,23 @@ CMakeFiles/run_tests.dir/storage.cpp.o:
 
 CMakeFiles/run_tests.dir/full_binary_tree.cpp.o:
 
+CMakeFiles/run_tests.dir/hash_simple.cpp.o:
+
 CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.o:
+
+CMakeFiles/run_tests.dir/tests/test_array.cpp.o:
+
+CMakeFiles/run_tests.dir/tests/test_slist.cpp.o:
+
+CMakeFiles/run_tests.dir/tests/test_dlist.cpp.o:
+
+CMakeFiles/run_tests.dir/tests/test_stack.cpp.o:
+
+CMakeFiles/run_tests.dir/tests/test_queue.cpp.o:
+
+CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.o:
+
+CMakeFiles/run_tests.dir/tests/test_storage.cpp.o:
 
 lib/libgtest_main.a:
 

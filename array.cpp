@@ -1,6 +1,8 @@
 #include "array.h"
 #include <stdexcept>
+#include <string>
 
+// Создание нового массива
 Array* create_array(const std::string& name) {
     Array* arr = new Array;
     arr->name = name;
@@ -9,73 +11,77 @@ Array* create_array(const std::string& name) {
     arr->size = 0;
     return arr;
 }
-// Добавление в конец с автомат. расширением
+
+// Добавление в конец с автоматическим расширением
 void array_push_back(Array* arr, const std::string& value) {
+    if (!arr) throw std::out_of_range("Null array pointer");
     if (arr->size >= arr->capacity) {
         int new_capacity = arr->capacity * 2;
         std::string* new_data = new std::string[new_capacity];
-        for (int i = 0; i < arr->size; ++i) {
+        for (int i = 0; i < arr->size; ++i)
             new_data[i] = arr->data[i];
-        }
         delete[] arr->data;
         arr->data = new_data;
         arr->capacity = new_capacity;
     }
     arr->data[arr->size++] = value;
 }
+
 // Вставка по индексу
 void array_insert(Array* arr, int index, const std::string& value) {
+    if (!arr) throw std::out_of_range("Null array pointer");
     if (index < 0 || index > arr->size) throw std::out_of_range("Index out of range");
-    
-    // Если вставляем в конец, используем push_back
     if (index == arr->size) {
         array_push_back(arr, value);
         return;
     }
-    
-    // Проверяем нужно ли расширять массив
     if (arr->size >= arr->capacity) {
         int new_capacity = arr->capacity * 2;
         std::string* new_data = new std::string[new_capacity];
-        for (int i = 0; i < arr->size; ++i) {
+        for (int i = 0; i < arr->size; ++i)
             new_data[i] = arr->data[i];
-        }
         delete[] arr->data;
         arr->data = new_data;
         arr->capacity = new_capacity;
     }
-    
-    // Сдвигаем элементы
-    for (int i = arr->size; i > index; --i) {
+    for (int i = arr->size; i > index; --i)
         arr->data[i] = arr->data[i - 1];
-    }
     arr->data[index] = value;
     arr->size++;
 }
+
 // Получение элемента по индексу
 std::string array_get(const Array* arr, int index) {
+    if (!arr) throw std::out_of_range("Null array pointer");
     if (index < 0 || index >= arr->size) throw std::out_of_range("Index out of range");
     return arr->data[index];
 }
+
 // Изменение элемента по индексу
 void array_set(Array* arr, int index, const std::string& value) {
+    if (!arr) throw std::out_of_range("Null array pointer");
     if (index < 0 || index >= arr->size) throw std::out_of_range("Index out of range");
     arr->data[index] = value;
 }
-// Удаление элемента
+
+// Удаление элемента по индексу
 void array_delete(Array* arr, int index) {
+    if (!arr) throw std::out_of_range("Null array pointer");
     if (index < 0 || index >= arr->size) throw std::out_of_range("Index out of range");
-    for (int i = index; i < arr->size - 1; ++i) {
+    for (int i = index; i < arr->size - 1; ++i)
         arr->data[i] = arr->data[i + 1];
-    }
     arr->size--;
 }
+
 // Получение количества элементов
 int array_length(const Array* arr) {
+    if (!arr) return 0;
     return arr->size;
 }
+
 // Чтение всех элементов в строку
 std::string array_read(const Array* arr) {
+    if (!arr) return "";
     std::string result;
     for (int i = 0; i < arr->size; ++i) {
         if (!result.empty()) result += " ";
@@ -84,8 +90,9 @@ std::string array_read(const Array* arr) {
     return result;
 }
 
+// Освобождение памяти массива
 void destroy_array(Array* arr) {
-    if (!arr) return; 
+    if (!arr) return;
     delete[] arr->data;
     delete arr;
 }

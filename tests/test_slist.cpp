@@ -59,11 +59,40 @@ TEST_F(ForwardListTest, FindRead) {
 }
 
 TEST_F(ForwardListTest, EmptyListOps) {
-    flist_delete_head(list); // ничего не сломается
-    flist_delete_tail(list);
-    flist_delete_value(list, "notfound");
-    EXPECT_FALSE(flist_find(list, "notfound"));
+    // Проверяем, что операции на пустом списке бросают исключения
+    EXPECT_THROW(flist_delete_head(list), std::runtime_error);
+    EXPECT_THROW(flist_delete_tail(list), std::runtime_error);
+    EXPECT_THROW(flist_delete_value(list, "value"), std::runtime_error);
+    EXPECT_THROW(flist_insert_before(list, "target", "value"), std::runtime_error);
+    EXPECT_THROW(flist_insert_after(list, "target", "value"), std::runtime_error);
+    EXPECT_THROW(flist_delete_before(list, "target"), std::runtime_error);
+    EXPECT_THROW(flist_delete_after(list, "target"), std::runtime_error);
+    
+    // Эти операции не должны бросать исключения на пустом списке
+    EXPECT_FALSE(flist_find(list, "value"));
     EXPECT_EQ(flist_read(list), "");
+}
+
+TEST_F(ForwardListTest, EdgeCases) {
+    // Тесты для граничных случаев используя фикстурный список
+    EXPECT_THROW(flist_insert_before(list, "nonexistent", "value"), std::runtime_error);
+    EXPECT_THROW(flist_insert_after(list, "nonexistent", "value"), std::runtime_error);
+    EXPECT_THROW(flist_delete_before(list, "nonexistent"), std::runtime_error);
+    EXPECT_THROW(flist_delete_after(list, "nonexistent"), std::runtime_error);
+    
+    // Добавим элементы и протестируем дополнительные edge cases
+    flist_push_head(list, "first");
+    flist_push_tail(list, "last");
+    
+    // Попытка вставить/удалить относительно несуществующих элементов
+    EXPECT_THROW(flist_insert_before(list, "missing", "value"), std::runtime_error);
+    EXPECT_THROW(flist_insert_after(list, "missing", "value"), std::runtime_error);
+    EXPECT_THROW(flist_delete_before(list, "missing"), std::runtime_error);
+    EXPECT_THROW(flist_delete_after(list, "missing"), std::runtime_error);
+    
+    // Особые случаи с первым и последним элементами
+    EXPECT_THROW(flist_delete_before(list, "first"), std::runtime_error); // Нельзя удалить перед первым
+    EXPECT_THROW(flist_delete_after(list, "last"), std::runtime_error);   // Нельзя удалить после последнего
 }
 
 TEST_F(ForwardListTest, BenchmarkInsertFind) {
@@ -80,10 +109,8 @@ TEST_F(ForwardListTest, BenchmarkInsertFind) {
     auto dur_find = std::chrono::duration_cast<std::chrono::microseconds>(end - mid);
     std::cout << "Insert 1000: " << dur_insert.count() << " us, Find 1000: " << dur_find.count() << " us\n";
 }
-// ДОБАВЬ! EDGE/ERROR TESTЫ
 
-// EDGE/ERROR TESTЫ для Forward_List
-
+// Отдельные тесты для особых случаев (не используют фикстуру)
 TEST(SlistExtraTest, DestroyNull) {
     EXPECT_NO_THROW(destroy_forward_list(nullptr));
 }
@@ -96,7 +123,7 @@ TEST(SlistExtraTest, PushNull) {
 TEST(SlistExtraTest, DeleteFindPopEmpty) {
     Forward_List* list = create_forward_list("extra");
     EXPECT_THROW(flist_delete_value(list, "notfound"), std::runtime_error);
-    EXPECT_THROW(flist_delete_head(list), std::runtime_error); // если на пустом выбрасывается
+    EXPECT_THROW(flist_delete_head(list), std::runtime_error);
     EXPECT_THROW(flist_delete_tail(list), std::runtime_error);
     EXPECT_FALSE(flist_find(list, "notfound"));
     destroy_forward_list(list);

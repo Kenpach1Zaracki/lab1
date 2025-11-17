@@ -170,10 +170,24 @@ CMakeFiles/run_tests.dir/full_binary_tree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/full_binary_tree.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/s1ayer/lab1.2/full_binary_tree.cpp -o CMakeFiles/run_tests.dir/full_binary_tree.cpp.s
 
+CMakeFiles/run_tests.dir/hash_simple.cpp.o: CMakeFiles/run_tests.dir/flags.make
+CMakeFiles/run_tests.dir/hash_simple.cpp.o: /home/s1ayer/lab1.2/hash_simple.cpp
+CMakeFiles/run_tests.dir/hash_simple.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/s1ayer/lab1.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/run_tests.dir/hash_simple.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/hash_simple.cpp.o -MF CMakeFiles/run_tests.dir/hash_simple.cpp.o.d -o CMakeFiles/run_tests.dir/hash_simple.cpp.o -c /home/s1ayer/lab1.2/hash_simple.cpp
+
+CMakeFiles/run_tests.dir/hash_simple.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/hash_simple.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/s1ayer/lab1.2/hash_simple.cpp > CMakeFiles/run_tests.dir/hash_simple.cpp.i
+
+CMakeFiles/run_tests.dir/hash_simple.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/hash_simple.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/s1ayer/lab1.2/hash_simple.cpp -o CMakeFiles/run_tests.dir/hash_simple.cpp.s
+
 CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.o: CMakeFiles/run_tests.dir/flags.make
 CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.o: /home/s1ayer/lab1.2/tests/test_full_binary_tree.cpp
 CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/s1ayer/lab1.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/s1ayer/lab1.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.o -MF CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.o.d -o CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.o -c /home/s1ayer/lab1.2/tests/test_full_binary_tree.cpp
 
 CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.i: cmake_force
@@ -184,6 +198,104 @@ CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/s1ayer/lab1.2/tests/test_full_binary_tree.cpp -o CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.s
 
+CMakeFiles/run_tests.dir/tests/test_array.cpp.o: CMakeFiles/run_tests.dir/flags.make
+CMakeFiles/run_tests.dir/tests/test_array.cpp.o: /home/s1ayer/lab1.2/tests/test_array.cpp
+CMakeFiles/run_tests.dir/tests/test_array.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/s1ayer/lab1.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/run_tests.dir/tests/test_array.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/tests/test_array.cpp.o -MF CMakeFiles/run_tests.dir/tests/test_array.cpp.o.d -o CMakeFiles/run_tests.dir/tests/test_array.cpp.o -c /home/s1ayer/lab1.2/tests/test_array.cpp
+
+CMakeFiles/run_tests.dir/tests/test_array.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/tests/test_array.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/s1ayer/lab1.2/tests/test_array.cpp > CMakeFiles/run_tests.dir/tests/test_array.cpp.i
+
+CMakeFiles/run_tests.dir/tests/test_array.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/tests/test_array.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/s1ayer/lab1.2/tests/test_array.cpp -o CMakeFiles/run_tests.dir/tests/test_array.cpp.s
+
+CMakeFiles/run_tests.dir/tests/test_slist.cpp.o: CMakeFiles/run_tests.dir/flags.make
+CMakeFiles/run_tests.dir/tests/test_slist.cpp.o: /home/s1ayer/lab1.2/tests/test_slist.cpp
+CMakeFiles/run_tests.dir/tests/test_slist.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/s1ayer/lab1.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/run_tests.dir/tests/test_slist.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/tests/test_slist.cpp.o -MF CMakeFiles/run_tests.dir/tests/test_slist.cpp.o.d -o CMakeFiles/run_tests.dir/tests/test_slist.cpp.o -c /home/s1ayer/lab1.2/tests/test_slist.cpp
+
+CMakeFiles/run_tests.dir/tests/test_slist.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/tests/test_slist.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/s1ayer/lab1.2/tests/test_slist.cpp > CMakeFiles/run_tests.dir/tests/test_slist.cpp.i
+
+CMakeFiles/run_tests.dir/tests/test_slist.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/tests/test_slist.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/s1ayer/lab1.2/tests/test_slist.cpp -o CMakeFiles/run_tests.dir/tests/test_slist.cpp.s
+
+CMakeFiles/run_tests.dir/tests/test_dlist.cpp.o: CMakeFiles/run_tests.dir/flags.make
+CMakeFiles/run_tests.dir/tests/test_dlist.cpp.o: /home/s1ayer/lab1.2/tests/test_dlist.cpp
+CMakeFiles/run_tests.dir/tests/test_dlist.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/s1ayer/lab1.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/run_tests.dir/tests/test_dlist.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/tests/test_dlist.cpp.o -MF CMakeFiles/run_tests.dir/tests/test_dlist.cpp.o.d -o CMakeFiles/run_tests.dir/tests/test_dlist.cpp.o -c /home/s1ayer/lab1.2/tests/test_dlist.cpp
+
+CMakeFiles/run_tests.dir/tests/test_dlist.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/tests/test_dlist.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/s1ayer/lab1.2/tests/test_dlist.cpp > CMakeFiles/run_tests.dir/tests/test_dlist.cpp.i
+
+CMakeFiles/run_tests.dir/tests/test_dlist.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/tests/test_dlist.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/s1ayer/lab1.2/tests/test_dlist.cpp -o CMakeFiles/run_tests.dir/tests/test_dlist.cpp.s
+
+CMakeFiles/run_tests.dir/tests/test_stack.cpp.o: CMakeFiles/run_tests.dir/flags.make
+CMakeFiles/run_tests.dir/tests/test_stack.cpp.o: /home/s1ayer/lab1.2/tests/test_stack.cpp
+CMakeFiles/run_tests.dir/tests/test_stack.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/s1ayer/lab1.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/run_tests.dir/tests/test_stack.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/tests/test_stack.cpp.o -MF CMakeFiles/run_tests.dir/tests/test_stack.cpp.o.d -o CMakeFiles/run_tests.dir/tests/test_stack.cpp.o -c /home/s1ayer/lab1.2/tests/test_stack.cpp
+
+CMakeFiles/run_tests.dir/tests/test_stack.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/tests/test_stack.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/s1ayer/lab1.2/tests/test_stack.cpp > CMakeFiles/run_tests.dir/tests/test_stack.cpp.i
+
+CMakeFiles/run_tests.dir/tests/test_stack.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/tests/test_stack.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/s1ayer/lab1.2/tests/test_stack.cpp -o CMakeFiles/run_tests.dir/tests/test_stack.cpp.s
+
+CMakeFiles/run_tests.dir/tests/test_queue.cpp.o: CMakeFiles/run_tests.dir/flags.make
+CMakeFiles/run_tests.dir/tests/test_queue.cpp.o: /home/s1ayer/lab1.2/tests/test_queue.cpp
+CMakeFiles/run_tests.dir/tests/test_queue.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/s1ayer/lab1.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/run_tests.dir/tests/test_queue.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/tests/test_queue.cpp.o -MF CMakeFiles/run_tests.dir/tests/test_queue.cpp.o.d -o CMakeFiles/run_tests.dir/tests/test_queue.cpp.o -c /home/s1ayer/lab1.2/tests/test_queue.cpp
+
+CMakeFiles/run_tests.dir/tests/test_queue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/tests/test_queue.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/s1ayer/lab1.2/tests/test_queue.cpp > CMakeFiles/run_tests.dir/tests/test_queue.cpp.i
+
+CMakeFiles/run_tests.dir/tests/test_queue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/tests/test_queue.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/s1ayer/lab1.2/tests/test_queue.cpp -o CMakeFiles/run_tests.dir/tests/test_queue.cpp.s
+
+CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.o: CMakeFiles/run_tests.dir/flags.make
+CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.o: /home/s1ayer/lab1.2/tests/test_hash_simple.cpp
+CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/s1ayer/lab1.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.o -MF CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.o.d -o CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.o -c /home/s1ayer/lab1.2/tests/test_hash_simple.cpp
+
+CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/s1ayer/lab1.2/tests/test_hash_simple.cpp > CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.i
+
+CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/s1ayer/lab1.2/tests/test_hash_simple.cpp -o CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.s
+
+CMakeFiles/run_tests.dir/tests/test_storage.cpp.o: CMakeFiles/run_tests.dir/flags.make
+CMakeFiles/run_tests.dir/tests/test_storage.cpp.o: /home/s1ayer/lab1.2/tests/test_storage.cpp
+CMakeFiles/run_tests.dir/tests/test_storage.cpp.o: CMakeFiles/run_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/s1ayer/lab1.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/run_tests.dir/tests/test_storage.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/run_tests.dir/tests/test_storage.cpp.o -MF CMakeFiles/run_tests.dir/tests/test_storage.cpp.o.d -o CMakeFiles/run_tests.dir/tests/test_storage.cpp.o -c /home/s1ayer/lab1.2/tests/test_storage.cpp
+
+CMakeFiles/run_tests.dir/tests/test_storage.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/run_tests.dir/tests/test_storage.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/s1ayer/lab1.2/tests/test_storage.cpp > CMakeFiles/run_tests.dir/tests/test_storage.cpp.i
+
+CMakeFiles/run_tests.dir/tests/test_storage.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/run_tests.dir/tests/test_storage.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/s1ayer/lab1.2/tests/test_storage.cpp -o CMakeFiles/run_tests.dir/tests/test_storage.cpp.s
+
 # Object files for target run_tests
 run_tests_OBJECTS = \
 "CMakeFiles/run_tests.dir/array.cpp.o" \
@@ -193,7 +305,15 @@ run_tests_OBJECTS = \
 "CMakeFiles/run_tests.dir/stack.cpp.o" \
 "CMakeFiles/run_tests.dir/storage.cpp.o" \
 "CMakeFiles/run_tests.dir/full_binary_tree.cpp.o" \
-"CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.o"
+"CMakeFiles/run_tests.dir/hash_simple.cpp.o" \
+"CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.o" \
+"CMakeFiles/run_tests.dir/tests/test_array.cpp.o" \
+"CMakeFiles/run_tests.dir/tests/test_slist.cpp.o" \
+"CMakeFiles/run_tests.dir/tests/test_dlist.cpp.o" \
+"CMakeFiles/run_tests.dir/tests/test_stack.cpp.o" \
+"CMakeFiles/run_tests.dir/tests/test_queue.cpp.o" \
+"CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.o" \
+"CMakeFiles/run_tests.dir/tests/test_storage.cpp.o"
 
 # External object files for target run_tests
 run_tests_EXTERNAL_OBJECTS =
@@ -205,13 +325,21 @@ run_tests: CMakeFiles/run_tests.dir/queue.cpp.o
 run_tests: CMakeFiles/run_tests.dir/stack.cpp.o
 run_tests: CMakeFiles/run_tests.dir/storage.cpp.o
 run_tests: CMakeFiles/run_tests.dir/full_binary_tree.cpp.o
+run_tests: CMakeFiles/run_tests.dir/hash_simple.cpp.o
 run_tests: CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.o
+run_tests: CMakeFiles/run_tests.dir/tests/test_array.cpp.o
+run_tests: CMakeFiles/run_tests.dir/tests/test_slist.cpp.o
+run_tests: CMakeFiles/run_tests.dir/tests/test_dlist.cpp.o
+run_tests: CMakeFiles/run_tests.dir/tests/test_stack.cpp.o
+run_tests: CMakeFiles/run_tests.dir/tests/test_queue.cpp.o
+run_tests: CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.o
+run_tests: CMakeFiles/run_tests.dir/tests/test_storage.cpp.o
 run_tests: CMakeFiles/run_tests.dir/build.make
 run_tests: CMakeFiles/run_tests.dir/compiler_depend.ts
 run_tests: lib/libgtest_main.a
 run_tests: lib/libgtest.a
 run_tests: CMakeFiles/run_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/s1ayer/lab1.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable run_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/s1ayer/lab1.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable run_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/run_tests.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -D TEST_TARGET=run_tests -D TEST_EXECUTABLE=/home/s1ayer/lab1.2/build/run_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/s1ayer/lab1.2/build -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=run_tests_TESTS -D CTEST_FILE=/home/s1ayer/lab1.2/build/run_tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_DISCOVERY_EXTRA_ARGS= -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake-3.31/Modules/GoogleTestAddTests.cmake
 

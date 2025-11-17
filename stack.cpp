@@ -10,11 +10,15 @@ Stack* create_stack(const std::string& name) {
 }
 // Добавление элемента
 void stack_push(Stack* stack, const std::string& value) {
+    if (stack == nullptr) {
+        throw std::invalid_argument("Stack is null");  // Добавьте эту проверку
+    }
     StackNode* newNode = new StackNode{value, stack->top};
     stack->top = newNode;
 }
 // Удаление и возврат верхнего элемента
 std::string stack_pop(Stack* stack) {
+    if (stack == nullptr) throw std::invalid_argument("Stack is null");
     if (!stack->top) throw std::runtime_error("Stack is empty");
     StackNode* temp = stack->top;
     std::string value = temp->data;
@@ -24,11 +28,13 @@ std::string stack_pop(Stack* stack) {
 }
 // Просмотр верхнего элемента без удаления
 std::string stack_peek(const Stack* stack) {
+    if (stack == nullptr) throw std::invalid_argument("Stack is null");
     if (!stack->top) throw std::runtime_error("Stack is empty");
     return stack->top->data;
 }
 // Чтение всех элементов
 std::string stack_read(const Stack* stack) {
+    if (stack == nullptr) return "";
     std::string result;
     StackNode* current = stack->top;
     while (current) {
@@ -40,6 +46,7 @@ std::string stack_read(const Stack* stack) {
 }
 
 void destroy_stack(Stack* stack) {
+    if (stack == nullptr) return; 
     while (stack->top) {
         stack_pop(stack);
     }

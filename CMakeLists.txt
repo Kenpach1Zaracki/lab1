@@ -27,11 +27,19 @@ set(SOURCES
     stack.cpp
     storage.cpp
     full_binary_tree.cpp
+    hash_simple.cpp
 )
 
 # Тестовые файлы
 set(TEST_SOURCES
-    tests/test_full_binary_tree.cpp
+  tests/test_full_binary_tree.cpp
+  tests/test_array.cpp
+  tests/test_slist.cpp
+  tests/test_dlist.cpp
+  tests/test_stack.cpp
+  tests/test_queue.cpp
+  tests/test_hash_simple.cpp
+  tests/test_storage.cpp  # ДОБАВЛЕНО
 )
 
 # Создание исполняемого файла тестов
@@ -41,3 +49,13 @@ target_link_libraries(run_tests gtest_main)
 
 include(GoogleTest)
 gtest_discover_tests(run_tests)
+
+# Цель для генерации отчета о покрытии
+add_custom_target(coverage
+    COMMAND ./run_tests
+    COMMAND lcov --capture --directory . --output-file coverage.info
+    COMMAND lcov --remove coverage.info "/usr/*" "*/build/*" "*/tests/*" "*/googletest/*" -o coverage_filtered.info
+    COMMAND genhtml coverage_filtered.info --output-directory coverage_report
+    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+    COMMENT "Generating coverage report"
+)

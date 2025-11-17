@@ -40,8 +40,8 @@ TEST_F(StackTest, Read) {
 }
 
 TEST_F(StackTest, PopEmpty) {
-    EXPECT_THROW(stack_pop(stack), std::runtime_error);
-    EXPECT_THROW(stack_peek(stack), std::runtime_error);
+    EXPECT_THROW(stack_pop(nullptr), std::invalid_argument);
+    EXPECT_THROW(stack_peek(nullptr), std::invalid_argument);
 }
 
 TEST_F(StackTest, BenchmarkPushPop) {
@@ -68,6 +68,6 @@ TEST(StackExtraTest, PushNull) {
 }
 
 TEST(StackExtraTest, PopPeekNull) {
-    EXPECT_THROW(stack_pop(nullptr), std::runtime_error);
-    EXPECT_THROW(stack_peek(nullptr), std::runtime_error);
+    EXPECT_THROW(stack_pop(nullptr), std::invalid_argument);
+    EXPECT_THROW(stack_peek(nullptr), std::invalid_argument);
 }

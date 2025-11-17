@@ -185,6 +185,19 @@ run_tests/fast:
 .PHONY : run_tests/fast
 
 #=============================================================================
+# Target rules for targets named coverage
+
+# Build rule for target.
+coverage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 coverage
+.PHONY : coverage
+
+# fast build rule for target.
+coverage/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/coverage.dir/build.make CMakeFiles/coverage.dir/build
+.PHONY : coverage/fast
+
+#=============================================================================
 # Target rules for targets named gmock
 
 # Build rule for target.
@@ -308,6 +321,30 @@ full_binary_tree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/full_binary_tree.cpp.s
 .PHONY : full_binary_tree.cpp.s
 
+hash_simple.o: hash_simple.cpp.o
+.PHONY : hash_simple.o
+
+# target to build an object file
+hash_simple.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/hash_simple.cpp.o
+.PHONY : hash_simple.cpp.o
+
+hash_simple.i: hash_simple.cpp.i
+.PHONY : hash_simple.i
+
+# target to preprocess a source file
+hash_simple.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/hash_simple.cpp.i
+.PHONY : hash_simple.cpp.i
+
+hash_simple.s: hash_simple.cpp.s
+.PHONY : hash_simple.s
+
+# target to generate assembly for a file
+hash_simple.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/hash_simple.cpp.s
+.PHONY : hash_simple.cpp.s
+
 queue.o: queue.cpp.o
 .PHONY : queue.o
 
@@ -404,6 +441,54 @@ storage.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/storage.cpp.s
 .PHONY : storage.cpp.s
 
+tests/test_array.o: tests/test_array.cpp.o
+.PHONY : tests/test_array.o
+
+# target to build an object file
+tests/test_array.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_array.cpp.o
+.PHONY : tests/test_array.cpp.o
+
+tests/test_array.i: tests/test_array.cpp.i
+.PHONY : tests/test_array.i
+
+# target to preprocess a source file
+tests/test_array.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_array.cpp.i
+.PHONY : tests/test_array.cpp.i
+
+tests/test_array.s: tests/test_array.cpp.s
+.PHONY : tests/test_array.s
+
+# target to generate assembly for a file
+tests/test_array.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_array.cpp.s
+.PHONY : tests/test_array.cpp.s
+
+tests/test_dlist.o: tests/test_dlist.cpp.o
+.PHONY : tests/test_dlist.o
+
+# target to build an object file
+tests/test_dlist.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_dlist.cpp.o
+.PHONY : tests/test_dlist.cpp.o
+
+tests/test_dlist.i: tests/test_dlist.cpp.i
+.PHONY : tests/test_dlist.i
+
+# target to preprocess a source file
+tests/test_dlist.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_dlist.cpp.i
+.PHONY : tests/test_dlist.cpp.i
+
+tests/test_dlist.s: tests/test_dlist.cpp.s
+.PHONY : tests/test_dlist.s
+
+# target to generate assembly for a file
+tests/test_dlist.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_dlist.cpp.s
+.PHONY : tests/test_dlist.cpp.s
+
 tests/test_full_binary_tree.o: tests/test_full_binary_tree.cpp.o
 .PHONY : tests/test_full_binary_tree.o
 
@@ -428,6 +513,126 @@ tests/test_full_binary_tree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_full_binary_tree.cpp.s
 .PHONY : tests/test_full_binary_tree.cpp.s
 
+tests/test_hash_simple.o: tests/test_hash_simple.cpp.o
+.PHONY : tests/test_hash_simple.o
+
+# target to build an object file
+tests/test_hash_simple.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.o
+.PHONY : tests/test_hash_simple.cpp.o
+
+tests/test_hash_simple.i: tests/test_hash_simple.cpp.i
+.PHONY : tests/test_hash_simple.i
+
+# target to preprocess a source file
+tests/test_hash_simple.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.i
+.PHONY : tests/test_hash_simple.cpp.i
+
+tests/test_hash_simple.s: tests/test_hash_simple.cpp.s
+.PHONY : tests/test_hash_simple.s
+
+# target to generate assembly for a file
+tests/test_hash_simple.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_hash_simple.cpp.s
+.PHONY : tests/test_hash_simple.cpp.s
+
+tests/test_queue.o: tests/test_queue.cpp.o
+.PHONY : tests/test_queue.o
+
+# target to build an object file
+tests/test_queue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_queue.cpp.o
+.PHONY : tests/test_queue.cpp.o
+
+tests/test_queue.i: tests/test_queue.cpp.i
+.PHONY : tests/test_queue.i
+
+# target to preprocess a source file
+tests/test_queue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_queue.cpp.i
+.PHONY : tests/test_queue.cpp.i
+
+tests/test_queue.s: tests/test_queue.cpp.s
+.PHONY : tests/test_queue.s
+
+# target to generate assembly for a file
+tests/test_queue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_queue.cpp.s
+.PHONY : tests/test_queue.cpp.s
+
+tests/test_slist.o: tests/test_slist.cpp.o
+.PHONY : tests/test_slist.o
+
+# target to build an object file
+tests/test_slist.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_slist.cpp.o
+.PHONY : tests/test_slist.cpp.o
+
+tests/test_slist.i: tests/test_slist.cpp.i
+.PHONY : tests/test_slist.i
+
+# target to preprocess a source file
+tests/test_slist.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_slist.cpp.i
+.PHONY : tests/test_slist.cpp.i
+
+tests/test_slist.s: tests/test_slist.cpp.s
+.PHONY : tests/test_slist.s
+
+# target to generate assembly for a file
+tests/test_slist.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_slist.cpp.s
+.PHONY : tests/test_slist.cpp.s
+
+tests/test_stack.o: tests/test_stack.cpp.o
+.PHONY : tests/test_stack.o
+
+# target to build an object file
+tests/test_stack.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_stack.cpp.o
+.PHONY : tests/test_stack.cpp.o
+
+tests/test_stack.i: tests/test_stack.cpp.i
+.PHONY : tests/test_stack.i
+
+# target to preprocess a source file
+tests/test_stack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_stack.cpp.i
+.PHONY : tests/test_stack.cpp.i
+
+tests/test_stack.s: tests/test_stack.cpp.s
+.PHONY : tests/test_stack.s
+
+# target to generate assembly for a file
+tests/test_stack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_stack.cpp.s
+.PHONY : tests/test_stack.cpp.s
+
+tests/test_storage.o: tests/test_storage.cpp.o
+.PHONY : tests/test_storage.o
+
+# target to build an object file
+tests/test_storage.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_storage.cpp.o
+.PHONY : tests/test_storage.cpp.o
+
+tests/test_storage.i: tests/test_storage.cpp.i
+.PHONY : tests/test_storage.i
+
+# target to preprocess a source file
+tests/test_storage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_storage.cpp.i
+.PHONY : tests/test_storage.cpp.i
+
+tests/test_storage.s: tests/test_storage.cpp.s
+.PHONY : tests/test_storage.s
+
+# target to generate assembly for a file
+tests/test_storage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/tests/test_storage.cpp.s
+.PHONY : tests/test_storage.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -441,6 +646,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... coverage"
 	@echo "... gmock"
 	@echo "... gmock_main"
 	@echo "... gtest"
@@ -455,6 +661,9 @@ help:
 	@echo "... full_binary_tree.o"
 	@echo "... full_binary_tree.i"
 	@echo "... full_binary_tree.s"
+	@echo "... hash_simple.o"
+	@echo "... hash_simple.i"
+	@echo "... hash_simple.s"
 	@echo "... queue.o"
 	@echo "... queue.i"
 	@echo "... queue.s"
@@ -467,9 +676,30 @@ help:
 	@echo "... storage.o"
 	@echo "... storage.i"
 	@echo "... storage.s"
+	@echo "... tests/test_array.o"
+	@echo "... tests/test_array.i"
+	@echo "... tests/test_array.s"
+	@echo "... tests/test_dlist.o"
+	@echo "... tests/test_dlist.i"
+	@echo "... tests/test_dlist.s"
 	@echo "... tests/test_full_binary_tree.o"
 	@echo "... tests/test_full_binary_tree.i"
 	@echo "... tests/test_full_binary_tree.s"
+	@echo "... tests/test_hash_simple.o"
+	@echo "... tests/test_hash_simple.i"
+	@echo "... tests/test_hash_simple.s"
+	@echo "... tests/test_queue.o"
+	@echo "... tests/test_queue.i"
+	@echo "... tests/test_queue.s"
+	@echo "... tests/test_slist.o"
+	@echo "... tests/test_slist.i"
+	@echo "... tests/test_slist.s"
+	@echo "... tests/test_stack.o"
+	@echo "... tests/test_stack.i"
+	@echo "... tests/test_stack.s"
+	@echo "... tests/test_storage.o"
+	@echo "... tests/test_storage.i"
+	@echo "... tests/test_storage.s"
 .PHONY : help
 
 
