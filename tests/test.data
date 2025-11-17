@@ -1,0 +1,8 @@
+ARRAY myarr 10 30 X C X C first replaced third first replaced third
+FLIST flist A C
+DLIST dlist X Z
+STACK mystack item3 item1 item1 item3
+QUEUE myqueue job3 job1 job2 job3
+TREE mytree 50 25 75 15 35
+STACK stack A C
+ARRAY arr 10 30
